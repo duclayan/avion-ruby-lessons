@@ -28,7 +28,7 @@ contacts = {"Analyn Cajocson" => {}, "AvionSchool" => {}}
 
 # details_bluePrint -> Holds the titles for each of the array content
 # sorted_data -> Holds array of data with title 
-details_bluePrint = ["email:", "address:", "phone number:"]
+details_bluePrint = [:email, :address, :phoneNumber]
 sorted_data = []
 
 # Connects data in array with its matching title
