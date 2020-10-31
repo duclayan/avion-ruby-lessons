@@ -12,19 +12,12 @@ end
   
 class User
     attr_writer :change_password
+    
     def initialize(username, password, ip_address)
         @username = username
         @change_password = password
         @password = @change_password
         @ip_address = ip_address
-    end
-
-    def admin_login
-        login
-    end
-
-    def buyer_login
-        login
     end
 
     protected
@@ -37,11 +30,20 @@ end
   
   class Admin < User
     include AdminPermisson
+
+    def admin_login
+        login
+    end
   end
   
   
   class Buyer < User
     include BuyerPermission
+
+    def buyer_login
+        login
+    end
+
   end
   
   
