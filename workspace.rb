@@ -1,28 +1,36 @@
-class User
-    # protected method should access and object or self
-    def perform
-        protected_method
-    end
+# Decorator Pattern
 
-    def try_this
-        puts "public method"
-        private_method
-        end
-
-    private
-    def private_method
-        puts "private method"
-    end
-
-    protected
-    def protected_method
-        puts "protected method"
+class Parser 
+    def parse 
+        puts "The Parser class received the parse method"
     end
 end
 
-ana = User.new
-tin = User.new
+class XmlParser
+  def initialize(parser)
+    @parser = parser
+  end
 
-ana.perform
+  def parse
+    @parser.parse
+    puts 'An instance of the XmlParser class received the parse message'
+  end
+end
 
+class JsonParser
+    def initialize(parser)
+      @parser = parser
+    end
+  
+    def parse
+      puts 'An instance of the JsonParser class received the parse message'
+      @parser.parse
+    end
+end
 
+puts 'Using the Xml Parser'
+parser = Parser.new
+XmlParser.new(parser).parse
+
+puts 'Using both Parsers!'
+JsonParser.new(XmlParser.new(parser)).parse

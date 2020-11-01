@@ -1,0 +1,32 @@
+*Abstraction:
+- Hides complexity by giving you a more abstract picture
+- Lets you focus on what the object does instead of how it does
+
+*Polymorphism: 
+polymorphism is like not worrying about having similar method/function names coz their methods are tied to their 
+respective objects despite having similar names
+
+class Payment
+    def type(payment)
+        payment.new
+    end
+end
+
+class FullyPaid
+    def type 
+        puts "Fully paid Payment"
+    end
+end
+
+class Installment
+    def type 
+        put "Fully paid payment"
+    end
+end
+
+customer_payment = Payment.new
+full = FullyPaid.new
+customer_payment.type(full)
+
+Installment = Installment.new
+customer_payment.type(Installment)
