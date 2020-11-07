@@ -18,16 +18,16 @@ WHERE id = 6
 CREATE TABLE classrooms (id integer, student_id integer, section varchar(1))
 INSERT INTO classrooms (id, student_id,section)
 VALUES
-(1,1,A),
-(2,2,A),
-(3,3,B),
-(4,4,C),
-(5,5,B),
-(6,6,A),
-(7,7,C),
-(8,8,B),
-(9,9,B),
-(10,10,C,);
+(1,1,'A'),
+(2,2,'A'),
+(3,3,'B'),
+(4,4,'C'),
+(5,5,'B'),
+(6,6,'A'),
+(7,7,'C'),
+(8,8,'B'),
+(9,9,'B'),
+(10,10,'C');
 
 -- Inner Join
 SELECT students.first_name, students.last_name, classrooms.student_id
