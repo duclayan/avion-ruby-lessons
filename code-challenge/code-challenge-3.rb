@@ -4,15 +4,7 @@ def getSum(x)
     total = [0,0]
     x.each do |num|
         num = num.to_i
-
-        if num > 0
-            total[0] = total[0] + 1
-        elsif num < 0 
-            total[1] = total[1] + num
-        end
-
+        (num > 0) ? (total[0] += 1) : total[1] += num
     end
-    puts "the total is #{total}"
     return total
 end
-puts (getSum(array_one).is_a? Array)
